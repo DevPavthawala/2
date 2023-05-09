@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: black;
+      }
+
+      .insane-hover-effect {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 18px;
+        color: white;
+        background-color: #4caf50;
+        border: none;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .insane-hover-effect:before {
+        content: "";
+        position: absolute;
+        top: -150%;
+        left: -150%;
+        width: 400%;
+        height: 400%;
+        background-color: rgba(255, 255, 255, 0.2);
+        transition: all 0.5s;
+        transform: rotate(-45deg);
+      }
+
+      .insane-hover-effect:hover:before {
+        top: -30%;
+        left: -30%;
+      }
+
+      .insane-hover-effect:hover {
+        color: #4caf50;
+        background-color: white;
+        border: 1px solid #4caf50;
+      }
+
+      .insane-hover-effect:hover span {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      .insane-hover-effect span {
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+        transition: all 0.5s;
+        color: #4caf50;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      #bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+        object-fit: cover;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <video
+      autoplay
+      loop
+      muted
+      id="bg-video"
+      src="omsbg5_OaAmNiF5.mp4"
+      type="omsbg5_OaAmNiF5/mp4"
+    ></video>
+    <div class="button-container">
+      <button
+        class="insane-hover-effect"
+        onclick="location.href='https://www.youtube.com/'"
+      >
+        Go To Link
+      </button>
+    </div>
+  </body>
+</html>
